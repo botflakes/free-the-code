@@ -178,9 +178,20 @@ initializeTheme();
     });
   }
 
-  const now = new Date();
-  const currentDate = formatDate(now);
+  function formatDateTime(date) {
+    return formatDate(date) + " " + date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+  }
+
   const issueRaisedDate = 'August 7, 2025';
+
+  // Get the actual last modified timestamp of this HTML file
+  const lastModified = new Date(document.lastModified);
+  const lastModifiedDate = formatDate(lastModified);
+  const lastModifiedDateTime = formatDateTime(lastModified);
 
   const timelineEl = document.querySelector('.timeline');
   const footerEls = document.querySelectorAll('.last-update');
@@ -188,21 +199,19 @@ initializeTheme();
   if (!timelineEl) return;
 
   const isResolved = timelineEl.dataset.resolved === "true";
-  const resolvedDateAttr = timelineEl.dataset.resolvedDate; // optional
+  const resolvedDateAttr = timelineEl.dataset.resolvedDate;
 
   if (isResolved && resolvedDateAttr) {
     const resolvedDate = formatDate(new Date(resolvedDateAttr));
+    const resolvedDateTime = formatDateTime(new Date(resolvedDateAttr));
     timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Resolved on ${resolvedDate}`;
-    timelineEl.style.background = 'var(--accent-success)';
-    timelineEl.style.color = 'var(--text-primary)';
-
     footerEls.forEach(p => {
-      p.textContent = `Page last updated: ${resolvedDate} | Issue resolved`;
+      p.textContent = `Page last updated: ${resolvedDateTime} | Issue resolved`;
     });
   } else {
-    timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Still ongoing as of ${currentDate}`;
+    timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Still ongoing as of ${lastModifiedDate}`;
     footerEls.forEach(p => {
-      p.textContent = `Page last updated: ${currentDate} | Issue ongoing since ${issueRaisedDate}`;
+      p.textContent = `Page last updated: ${lastModifiedDateTime} | Issue ongoing since ${issueRaisedDate}`;
     });
   }
 })();
