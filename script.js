@@ -166,19 +166,54 @@ function initializeTheme() {
 initializeTheme();
 
 // Hardcode timeline and footer dates
-(function setHardcodedDates() {
-  try {
-    const hardcoded = 'August 29, 2025';
-    const issueRaised = 'Issue raised: August 7, 2025';
-    const timelineEl = document.querySelector('.timeline');
-    if (timelineEl) timelineEl.textContent = `🗓️ ${issueRaised} | Still ongoing as of ${hardcoded}`;
-    document.querySelectorAll('footer p').forEach(p => {
-      const text = (p.textContent || '').trim();
-      if (text.startsWith('Last updated:')) {
-        p.textContent = `Last updated: ${hardcoded} | Issue ongoing since August 7, 2025`;
-      }
+// Pulls the current time/date of the visitors system and updates "Still ongoing" accordingly
+// "Resolved" function added see Index.html
+
+(function setTimelineDates() {
+  function formatDate(date) {
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     });
-  } catch (_) {}
+  }
+
+  function formatDateTime(date) {
+    return formatDate(date) + " " + date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+  }
+
+  const issueRaisedDate = 'August 7, 2025';
+
+  // Get the actual last modified timestamp of this HTML file
+  const lastModified = new Date(document.lastModified);
+  const lastModifiedDate = formatDate(lastModified);
+  const lastModifiedDateTime = formatDateTime(lastModified);
+
+  const timelineEl = document.querySelector('.timeline');
+  const footerEls = document.querySelectorAll('.last-update');
+
+  if (!timelineEl) return;
+
+  const isResolved = timelineEl.dataset.resolved === "true";
+  const resolvedDateAttr = timelineEl.dataset.resolvedDate;
+
+  if (isResolved && resolvedDateAttr) {
+    const resolvedDate = formatDate(new Date(resolvedDateAttr));
+    const resolvedDateTime = formatDateTime(new Date(resolvedDateAttr));
+    timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Resolved on ${resolvedDate}`;
+    footerEls.forEach(p => {
+      p.textContent = `Page last updated: ${resolvedDateTime} | Issue resolved`;
+    });
+  } else {
+    timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Still ongoing as of ${lastModifiedDate}`;
+    footerEls.forEach(p => {
+      p.textContent = `Page last updated: ${lastModifiedDateTime} | Issue ongoing since ${issueRaisedDate}`;
+    });
+  }
 })();
 
 // Performance optimization: Debounce scroll events

@@ -332,6 +332,7 @@ h1 {
 
 h1 .emoji {
   background: none !important;
+  background-clip: unset !important;
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: initial !important; /* restores native emoji color */
   font-size: 1.2em; /* optional */
@@ -353,6 +354,7 @@ h2 {
 
 h2 .emoji {
   background: none !important;
+  background-clip: unset !important;;
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: initial !important; /* restores native emoji color */
   font-size: 1em; /* optional */
