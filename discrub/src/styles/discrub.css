@@ -1,0 +1,118 @@
+/* Discrub Chat Theming Overrides */
+
+/* Theme tokens (fallbacks if main page tokens not present) */
+:root {
+  --bg-gradient-start: #0a0e16;
+  --bg-gradient-mid: #0f1419;
+  --bg-gradient-end: #1c2128;
+  --text-secondary: #e6edf3;
+  --text-primary: #f0f6fc;
+  --text-muted: #8b949e;
+  --border-default: rgba(240, 246, 252, 0.13);
+  --surface-glass: rgba(22, 27, 34, 0.7);
+}
+
+/* Harmonize page background and text with main site */
+body {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -20%, rgba(88, 166, 255, 0.08), transparent),
+    radial-gradient(ellipse 80% 50% at 80% 120%, rgba(188, 140, 255, 0.08), transparent),
+    linear-gradient(135deg, var(--bg-gradient-start, #0a0e16) 0%, var(--bg-gradient-mid, #0f1419) 50%, var(--bg-gradient-end, #1c2128) 100%) !important;
+  color: var(--text-secondary, #e6edf3) !important;
+}
+
+/* Typography harmony */
+h1, h2, h3, h4 {
+  color: var(--text-primary);
+}
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+a:hover { border-bottom-color: #58a6ff; }
+
+/* Fixed top nav to return to PSA */
+.chat-top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(240, 246, 252, 0.12);
+  z-index: 10000;
+}
+
+.chat-top-nav .brand {
+  color: #f0f6fc;
+  font-weight: 700;
+}
+
+.chat-top-nav a.back-link {
+  color: #58a6ff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(240, 246, 252, 0.12);
+  background: rgba(22, 27, 34, 0.6);
+}
+
+/* Offset chat content for fixed nav */
+body.chat-offset {
+  margin-top: 70px;
+}
+
+/* Glass/elevated surfaces for common export blocks (MUI/Dynamic classes) */
+/* Many Discrub exports use inline background-color on divs; upgrade them to glass */
+div[style*="background-color: rgb(40, 43, 48)"]
+,div[style*="background-color: rgb(30, 33, 36)"]
+,div[style*="background-color: rgba(40, 43, 48"]
+,div[style*="background-color: rgba(30, 33, 36"] {
+  background: var(--surface-glass) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+}
+
+/* Cards and papers */
+[class*="MuiPaper-root"],
+[class^="css-"][class*="Paper"],
+[class^="css-"][class*="-paper"],
+.css-36uxri, .css-17w0thj, .css-1jj0mek {
+  background: var(--surface-glass) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid var(--border-default) !important;
+  border-radius: 12px !important;
+}
+
+/* Images: fit and soften */
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* Code/Pre */
+code, pre {
+  background: rgba(22,27,34,0.6) !important;
+  border: 1px solid var(--border-default) !important;
+  border-radius: 8px !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Subtle scrollbars */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 10px; }
+*::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
+
+

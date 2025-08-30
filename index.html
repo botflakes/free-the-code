@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>PSA: Elegoo Centauri Carbon & GPL Compliance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/icons/elegoo-logo.png">
+    <link rel="canonical" href="https://freethecode.lol/">
+    <meta name="description" content="A community effort aggregating evidence, context, and actions to ensure GPL compliance for the Elegoo Centauri Carbon firmware.">
+
+    <!-- Open Graph for rich embeds -->
+    <meta property="og:title" content="PSA: Elegoo Centauri Carbon & GPL Compliance">
+    <meta property="og:description" content="Community evidence indicates CC firmware is Klipper‑based with modifications. This page aggregates proof, context, and actions for GPL compliance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freethecode.lol/">
+    <meta property="og:image" content="https://freethecode.lol/assets/images/cat-sunglasses.png">
+    <meta property="og:image:secure_url" content="https://freethecode.lol/assets/images/cat-sunglasses.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="PSA preview image">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PSA: Elegoo Centauri Carbon & GPL Compliance">
+    <meta name="twitter:description" content="Evidence, links, and community actions regarding GPL compliance for the Centauri Carbon firmware.">
+    <meta name="twitter:image" content="https://freethecode.lol/assets/images/cat-sunglasses.png">
+
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Navigation Menu -->
+    <a class="skip-link" href="#overview">Skip to content</a>
+    <nav class="nav-menu" role="navigation" aria-label="Primary">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <span class="nav-icon">⚠️</span>
+          <span class="nav-title">GPL Compliance PSA</span>
+        </div>
+        <div class="nav-links">
+          <a href="#overview" class="nav-link">Overview</a>
+          <a href="#evidence" class="nav-link">Evidence</a>
+          <a href="#context" class="nav-link">Context</a>
+          <a href="#legal" class="nav-link">Legal & Policy</a>
+          <a href="#good-actors" class="nav-link">Good Actors</a>
+          <a href="#support" class="nav-link">Support</a>
+          <a href="#contributors" class="nav-link">Contributors</a>
+          <a href="#response" class="nav-link">Response</a>
+          <a href="#action" class="nav-link">Take Action</a>
+          <a href="#outcomes" class="nav-link">Outcomes</a>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="glass-container" id="overview">
+      <div class="hero-content">
+        <h1>⚠️ PSA: Elegoo Centauri Carbon & GPL Compliance</h1>
+        <p class="hero-subtitle">
+          A community effort to ensure GPL license compliance in 3D printer firmware
+        </p>
+        <div class="timeline">
+          🗓️ Issue raised: August 7, 2025 | Still ongoing as of August 27, 2025
+        </div>
+        <div class="source-link">
+          <span>📋 Sources: </span>
+          <a href="ELEGOO%20Official/Request%20for%20source%20code%20for%20Klipper%20used%20in%20the%20Centauri%20Carbon_7vVQSTcLfW/Request%20for%20source%20code%20for%20Klipper%20used%20in%20the%20Centauri%20Carbon_page_1.html" target="_blank" rel="noopener noreferrer">Discord Export</a>
+          · <a href="https://www.reddit.com/r/3Dprinting/comments/1n1rlmc/klipper_on_the_centauri_carbon_i_need_your_help/" target="_blank" rel="noopener noreferrer">Reddit: Klipper on CC</a>
+          · <a href="https://www.reddit.com/r/elegoo/comments/1n36tll/elegoo_is_lying/" target="_blank" rel="noopener noreferrer">Reddit: “Elegoo is lying”</a>
+          · <a href="https://www.hackster.io/news/elegoo-centauri-carbon-3d-printer-review-c57caab085e1" target="_blank" rel="noopener noreferrer">Hackster review quote</a>
+          · <a href="https://blog.octoeverywhere.com/the-best-iphone-and-android-apps-for-the-elegoo-centauri-carbon/" target="_blank" rel="noopener noreferrer">OctoEverywhere mention</a>
+          · <a href="https://consumerrights.wiki/Article_suggestions" target="_blank" rel="noopener noreferrer">Rossmann ConsumerRights wiki</a>
+          · <a href="https://github.com/OpenCentauri/OpenCentauri/tree/main/serial-multiplexer" target="_blank" rel="noopener noreferrer">Serial multiplexer</a>
+        </div>
+      </div>
+    </header>
+    <main class="layout">
+      <aside class="toc glass-container" aria-label="Table of contents" id="primary-navigation">
+        <h3>On this page</h3>
+        <ul class="toc-list">
+          <li><a class="toc-link" href="#overview">Overview</a></li>
+          <li><a class="toc-link" href="#evidence">Evidence</a></li>
+          <li><a class="toc-link" href="#context">Context</a></li>
+          <li><a class="toc-link" href="#legal">Legal & Policy</a></li>
+          <li><a class="toc-link" href="#good-actors">Good Actors</a></li>
+          <li><a class="toc-link" href="#support">Support</a></li>
+          <li><a class="toc-link" href="#contributors">Contributors</a></li>
+          <li><a class="toc-link" href="#response">Response</a></li>
+          <li><a class="toc-link" href="#action">Take Action</a></li>
+          <li><a class="toc-link" href="#outcomes">Outcomes</a></li>
+        </ul>
+      </aside>
+      <div class="content">
+    <section>
+      <div class="glass-card" id="issue">
+        <h2>📌 The Issue</h2>
+        <p>
+          The <strong>Elegoo Centauri Carbon</strong> 3D printer uses a heavily
+          modified version of <a href="https://www.klipper3d.org/">Klipper</a>
+          firmware, specifically based on a commit <code>616 commits past v0.9.1 (shorthash 28f60f7e)</code>.
+          Klipper is licensed under <strong>GPL-3.0</strong>, which legally
+          requires all modifications to be made publicly available.
+        </p>
+
+        <div class="highlight">
+          <strong>Why this matters:</strong> GPL compliance isn't optional—it's
+          a legal requirement. When companies use open-source software, they
+          must respect the licenses. This ensures transparency, security, and
+          the right for users to modify and improve their own devices.
+        </div>
+
+        <div class="warning">
+          <strong>Current Status:</strong> Despite clear evidence and community
+          pressure since August 7, 2025, Elegoo has only provided generic
+          support responses stating the issue is "under review by R&D."
+        </div>
+      </div>
+
+      <div class="glass-card" id="evidence">
+        <h2>🔍 Technical Evidence</h2>
+        <p>
+          Community investigation by user <strong>Sims (HACC)</strong> revealed
+          multiple pieces of evidence through detailed binary analysis:
+        </p>
+
+        <h4>DSP MCU Firmware Analysis</h4>
+        <p>
+          The DSP (part of Allwinner SoC) uses Xtensa architecture and runs as the mainboard MCU.
+          Binary analysis shows:
+        </p>
+        <ul>
+          <li>Clear Klipper MCU code paths in the DSP firmware</li>
+          <li>Xtensa architecture not supported by mainline Klipper—proving custom modifications</li>
+          <li>Firmware is not stripped, allowing detailed reverse engineering</li>
+        </ul>
+
+        <h4>Bed MCU Firmware</h4>
+        <ul>
+          <li>Contains commands not present in mainline Klipper</li>
+          <li>Mainline Klipper can connect but shuts down due to version mismatch</li>
+          <li>Reveals exact commit: <code>616 commits past v0.9.1 (shorthash 28f60f7e)</code></li>
+        </ul>
+
+        <h4>Host Software Analysis</h4>
+        <ul>
+          <li>Main application at <code>/app/app</code> is written in C++</li>
+          <li>Contains transpiled Python code from Klipper's Klippy host</li>
+          <li>Original references to Klippy remain intact in the C++ version</li>
+          <li>Includes components like <code>mem_interface_DSP</code></li>
+        </ul>
+
+        <h4>Network Traffic Investigation</h4>
+        <p>
+          Community members investigated excessive network usage:
+        </p>
+        <ul>
+          <li>Printer generates 70GB+ of traffic per month while idle</li>
+          <li>Health checks ping servers 10+ times per minute</li>
+          <li>Traffic analysis shows connections to Apple servers</li>
+          <li>Responsible for 29.5% of household network traffic while idle</li>
+        </ul>
+
+        <div class="info">
+          <strong>Technical Note:</strong> While open-sourcing may be challenging due to
+          Allwinner and Chitu involvement, other manufacturers like Creality
+          have solved this by releasing source code alongside binary blobs for
+          proprietary components.
+        </div>
+
+        <div class="warning">
+          <strong>Security Concern:</strong> Running known out-of-date open-source software
+          without access to security patches creates significant risks for botnet exploitation.
+        </div>
+      </div>
+
+      <div class="glass-card" id="context">
+        <h2>🏢 Industry Context</h2>
+        <p>
+          Unfortunately, Elegoo isn't alone in GPL violations. Several major 3D
+          printer manufacturers have similar issues:
+        </p>
+        <ul>
+          <li>
+            <strong>Anycubic:</strong> KobraOS on 2.x and 3.x series violates
+            GPL on multiple libraries including Klipper
+          </li>
+          <li>
+            <strong>Chitu-supplied platforms:</strong> Shared firmware stacks used across brands have led to shipments that include modified GPL components without corresponding source. Supplier contracts do not remove the distributor’s GPL obligations.
+          </li>
+          <li>
+            <strong>Historical cases:</strong> Community reports cite GPL gaps on specific models (e.g., Creality CR‑X), while other products later published sources (e.g., Creality K1 series).
+          </li>
+          <li>
+            <strong>Marlin/Linux derivatives:</strong> Some vendors have shipped modified Marlin, Linux kernels, or Entware without timely source publication. GPL‑3.0 requires providing complete corresponding source to users of the binaries.
+          </li>
+          <li>
+            <strong>Bambu Lab (ecosystem restrictions):</strong> Recent firmware introduced an authorization control system that blocks custom firmware and restricts third‑party slicers from wireless transfers. "Bambu Connect" provides a limited bridge; community notes reduced direct access and accessory compatibility.
+          </li>
+        </ul>
+
+        <div class="highlight">
+          <strong>The Solution:</strong> The 3D printing community needs to
+          hold manufacturers accountable. GPL violations harm innovation,
+          security, and user rights across the entire ecosystem.
+        </div>
+      </div>
+
+      <div class="glass-card" id="legal">
+        <h2>⚖️ Legal and Policy Points</h2>
+        <p>
+          Recent discussion clarified several important GPL topics and consumer options:
+        </p>
+        <ul>
+          <li><strong>Binary blobs vs. GPL‑3.0:</strong> Linux allows some blobs under GPL‑2.0 with exceptions; GPL‑3.0 requires complete corresponding source for modified GPL components. A blob cannot replace modified Klipper source.</li>
+          <li><strong>Why compliance matters:</strong> If a vendor cannot publish changes due to third‑party contracts (e.g., Allwinner), they should not have used GPL code. Non‑compliance voids distribution rights.</li>
+          <li><strong>Fraud and consumer protection:</strong> Misrepresentations (e.g., denying Klipper use) may create consumer fraud exposure; some users consider FTC/state reports.</li>
+          <li><strong>Chargebacks (use cautiously):</strong> Some banks may accept disputes for deceptive practices. Risk: loss of support or future purchases.</li>
+          <li><strong>International enforcement:</strong> GPL has seen international enforcement, including in China. For imported hardware, U.S. courts can issue border injunctions.</li>
+          <li><strong>Chitu involvement:</strong> Code suggests Chitu involvement and similarities to Anycubic Kobra 2 Pro, impacting who should receive compliance requests.</li>
+        </ul>
+        <p style="opacity:.8">These points reflect community discussion and are not legal advice.</p>
+      </div>
+
+      <div class="glass-card" id="good-actors">
+        <h2>✅ Good Actors (Open-Source Compliance)</h2>
+        <p>Examples of manufacturers/projects releasing sources and enabling community collaboration:</p>
+        <ul>
+          <li><strong>Creality</strong> — Released open-source Klipper firmware for K1 series and Ender 3 V3 KE.</li>
+          <li><strong>Ultimaker</strong> — Long-standing open-source ethos; early printers released with open designs.</li>
+          <li><strong>BCN3D</strong> — Published original design files for Sigma/Sigmax R19 to benefit the community.</li>
+          <li><strong>Rat Rig</strong> — Open-source V‑Core series; open hardware approach encourages modification.</li>
+          <li><strong>Bambu Lab</strong> — Previously enabled open‑source elements on the X1 line (2023); recent authorization controls have tightened the ecosystem and limited third‑party wireless transfers.</li>
+          <li><strong>Sovol</strong> — SV08 project sources published on GitHub.</li>
+        </ul>
+        <p style="opacity:.8">If you have more examples, propose additions via PR or message in the thread.</p>
+      </div>
+
+      <div class="glass-card" id="support">
+        <h2>🤝 Community Support</h2>
+        <p>
+          The community has rallied behind this issue with overwhelming
+          support:
+        </p>
+
+        <div class="community-support">
+          <div class="support-badge">
+            <strong>50+</strong><br />Discord reactions
+          </div>
+          <div class="support-badge">
+            <strong>25+</strong><br />Active community members
+          </div>
+          <div class="support-badge">
+            <strong>Multiple</strong><br />Email requests sent
+          </div>
+          <div class="support-badge">
+            <strong>100%</strong><br />Community agreement
+          </div>
+        </div>
+
+        <h3>Notable Community Quotes:</h3>
+        <blockquote class="quote">
+          <p>
+            <strong>Lamarc | N4 | CC (HACC):</strong> "Everyone including elegoo is required to stick to licensing rules.
+            It's clearly Klipper under the hood so it has to be made available"
+          </p>
+          <p>
+            <strong>Anna | DevMiner (HACC):</strong> "Taking opensource projects (Klipper) and calling them your own is super scummy"
+          </p>
+          <p>
+            <strong>Anna | DevMiner (HACC):</strong> "If you take opensource software that's licensed under GPL-3.0,
+            modify it and then not allow people to see the code, you're violating the license and are very easy to sue."
+          </p>
+          <p>
+            <strong>leiden6665:</strong> "Yeah, any derivatives of Klipper have to be open source because of the license.
+            I mentioned this in one of the other chats I'm surprised it took this long for someone to bring it up."
+          </p>
+          <p>
+            <strong>zuturiddu:</strong> "I fully support this request, which is essentially asking to adhere to use of open source software under a specific license."
+          </p>
+          <p>
+            <strong>Fabrizio | N4:</strong> "I support this. Provide the source."
+          </p>
+          <p>
+            <strong>bloky246:</strong> "I hope they make it open source as well"
+          </p>
+          <p>
+            <strong>Connor:</strong> "I stopped having the printer from idling anymore and now I'm gonna just turn off the wifi,
+            the Chinese have too much to gain from my american network until they can explain themselves"
+          </p>
+        </blockquote>
+      </div>
+
+      <div class="glass-card" id="contributors">
+        <h2>🙏 Special Thanks to Our Contributors</h2>
+        <p>
+          This community effort wouldn't be possible without the dedication and
+          expertise of numerous individuals. We extend our heartfelt gratitude
+          to everyone who has contributed to this important cause:
+        </p>
+
+        <div class="gratitude">
+          <strong>This is what open-source community looks like:</strong>
+          Technical experts, concerned users, and advocates working together to
+          protect everyone's rights. Every contribution, from detailed technical
+          analysis to simple support messages, has been valuable in building
+          this case.
+        </div>
+
+        <div class="contributors-grid">
+          <div class="contributor-category">
+            <h4>🔬 Technical Analysis & Investigation</h4>
+            <ul class="contributor-list">
+              <li><strong>Sims (HACC)</strong> - Original researcher who identified the GPL violation, performed binary analysis, and provided detailed technical evidence</li>
+              <li><strong>Rabir (HACC)</strong> - Verified that mainline Klipper can connect to the bed board, confirming version details</li>
+              <li><strong>Kvviingu</strong> - Performed network traffic analysis showing excessive data usage</li>
+              <li><strong>LA3QMA-KGB</strong> - Conducted tcpdump analysis to understand network behavior</li>
+              <li><strong>erica</strong> - Provided technical insights on network traffic and security implications</li>
+            </ul>
+          </div>
+
+          <div class="contributor-category">
+            <h4>✉️ Active Advocacy & Communication</h4>
+            <ul class="contributor-list">
+              <li><strong>Mikufan39s</strong> - Emailed Elegoo multiple times, shared responses, persistent follow-up</li>
+              <li><strong>Anna | DevMiner (HACC)</strong> - Daily pings to Elegoo staff, strong GPL advocacy, community coordination</li>
+              <li><strong>EXEN</strong> - Emailed Elegoo, tagged support staff, actively supported the cause</li>
+              <li><strong>Marcel | CC (HACC)</strong> - Emailed Elegoo and shared identical response patterns</li>
+              <li><strong>beiyr (HACC)</strong> - Daily pings to Elegoo staff, consistent support</li>
+            </ul>
+          </div>
+
+          <div class="contributor-category">
+            <h4>💪 Community Support & Awareness</h4>
+            <ul class="contributor-list">
+              <li><strong>Lamarc | N4 | CC (HACC)</strong> - Full support, noted industry compliance issues</li>
+              <li><strong>leiden6665</strong> - Early recognition of GPL requirements, mentioned the issue before</li>
+              <li><strong>Fabrizio | N4</strong> - Clear support for source code release</li>
+              <li><strong>coffeecup</strong> - Supported open source compliance</li>
+              <li><strong>Delulu Delilah</strong> - 100% support for the request</li>
+              <li><strong>zuturiddu</strong> - Full support for license adherence</li>
+              <li><strong>nate™ (DVNO)</strong> - Co-signed the request</li>
+              <li><strong>bloky246</strong> - Sent multiple emails to Elegoo requesting source code</li>
+              <li><strong>Connor</strong> - Turned off printer WiFi due to security concerns</li>
+              <li><strong>EXEN</strong> - Tagged Elegoo support staff and advocated actively</li>
+              <li><strong>beiyr (HACC)</strong> - Daily pings to Elegoo staff, consistent support</li>
+              <li><strong>Mikufan39s</strong> - Emailed Elegoo multiple times, shared responses</li>
+              <li><strong>Marcel | CC (HACC)</strong> - Emailed Elegoo and shared identical response patterns</li>
+            </ul>
+          </div>
+
+          <div class="contributor-category">
+            <h4>🌐 Network Traffic Investigation</h4>
+            <ul class="contributor-list">
+              <li><strong>crazyantihacker</strong> - Investigated excessive 70GB+ monthly traffic while idle</li>
+              <li><strong>Kvviingu</strong> - Confirmed 29.5% of household traffic from idle printer, Apple server connections</li>
+              <li><strong>Anna | DevMiner (HACC)</strong> - Reported 100GB+ traffic from mainboard in one month</li>
+              <li><strong>LA3QMA-KGB</strong> - Conducted tcpdump analysis of network behavior</li>
+              <li><strong>erica</strong> - Provided technical insights on traffic patterns and security implications</li>
+              <li><strong>baconmilkshake (AHI)</strong> - Explained development shortcuts leading to excessive network requests</li>
+            </ul>
+          </div>
+
+          <div class="contributor-category">
+            <h4>📚 Industry Context & Legal Insights</h4>
+            <ul class="contributor-list">
+              <li><strong>Corey Stup</strong> - Provided context about Anycubic's similar GPL violations</li>
+              <li><strong>Motorhead1991</strong> - Noted this has been mentioned before, highlighted other GPL violations (Linux kernel, Entware)</li>
+              <li><strong>legionasaurus (HACC)</strong> - Commented on legal expert aspects</li>
+              <li><strong>baconmilkshake (AHI)</strong> - Provided reasonable explanations and security concerns about outdated firmware</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info">
+          <strong>Special Recognition:</strong> <strong>Owen (Technical Support)</strong> from Elegoo deserves credit for being the only Elegoo employee to acknowledge the issue directly and provide a timeline, showing that constructive dialogue is possible.
+        </div>
+
+        <h3>Community Moderators & Platform Providers:</h3>
+        <ul>
+          <li><strong>YogurtDrink | Resin / CC</strong> - Clarified community roles and helped direct requests to appropriate Elegoo employees</li>
+          <li><strong>Chirimorin | CC, N4Pro, S4U</strong> - Provided context on network traffic analysis</li>
+        </ul>
+
+        <div class="gratitude">
+          <strong>To everyone listed above and the many others who have supported this effort:</strong> Your collective voice has turned a single technical observation into a powerful community movement. This is exactly how open-source communities should work—together, transparently, and with respect for the legal frameworks that protect everyone's rights.
+        </div>
+      </div>
+
+      <div class="glass-card" id="response">
+        <h2>📧 Elegoo's Response</h2>
+        <p>
+          Community members have received mostly identical canned responses from
+          Elegoo support, with multiple people reporting receiving the exact same message:
+        </p>
+
+        <div class="warning">
+          <h3>Typical Canned Response:</h3>
+          <div class="email-template">
+Subject: Re: Request for GPL Compliance - Centauri Carbon Firmware
+
+Dear Customer,
+
+Thank you for providing us with your valuable reply. We greatly appreciate your input, and we want to assure you that we are actively working on addressing the issue you raised.
+
+Currently, we have submitted the relevant information to our Research and Development (R&D) team and are awaiting their response. However, we regret to inform you that there has been a delay in the process, which has contributed to the extended timeframe. We sincerely apologize for any inconvenience this delay may have caused you.
+
+Please rest assured that your feedback is important to us, and we are fully committed to resolving the matter as promptly as possible. Our R&D team is diligently reviewing the information and exploring possible solutions to address the issue you encountered.
+
+Regards
+Jett Yue
+ELEGOO Support Team
+          </div>
+          <p style="margin-top: 1rem; font-style: italic; opacity: 0.8">
+            <strong>— Multiple community members received this identical response</strong>
+          </p>
+        </div>
+
+        <div class="info">
+          <strong>Community Reactions:</strong>
+        </div>
+
+        <ul>
+          <li><strong>Marcel | CC (HACC):</strong> "Got the same response 1 to 1"</li>
+          <li><strong>erica:</strong> "yeah, i got this exact same response too"</li>
+          <li><strong>Anna | DevMiner (HACC):</strong> "they just have canned responses to all the common issues"</li>
+          <li><strong>Anna | DevMiner (HACC):</strong> "I'd be great if elegoo can get their head out of their butt and have the courage to talk like real people and not just copy-paste the same message"</li>
+        </ul>
+
+        <div class="highlight">
+          <strong>Staff Response:</strong> Owen (Elegoo Technical Support) acknowledged the issue and mentioned there "should be a response in a day or two" as of August 12, 2025. However, no concrete action has been taken as of the latest community reports on August 27, 2025.
+        </div>
+
+        <div class="warning">
+          <strong>Community Concern:</strong> Multiple members expressed frustration that Elegoo employees (including moderators) were unable or unwilling to directly address the technical GPL compliance issues raised by the community.
+        </div>
+
+        <div class="info">
+          <strong>Latest updates (Aug 27–29, 2025):</strong>
+          <ul>
+            <li>Clarified: binary blobs are not a GPL‑3.0 workaround; complete corresponding source is required for modified Klipper.</li>
+            <li>Community notes potential fraud concerns from past denials; some consider FTC/state reports.</li>
+            <li>Some users weighing chargebacks; caution: this can impact future support/purchases.</li>
+            <li>Discussion on international enforcement and possible border injunctions for non‑compliant imports.</li>
+            <li>Chitu likely involved; similarities to Anycubic Kobra 2 Pro firmware observed.</li>
+            <li>Links added: Reddit context, Hackster review, OctoEverywhere mention, Rossmann wiki suggestion.</li>
+            <li>Workarounds: Raspberry Pi host possible via <a href="https://github.com/OpenCentauri/OpenCentauri/tree/main/serial-multiplexer" target="_blank" rel="noopener noreferrer">serial‑multiplexer</a>, MCU side remains challenging.</li>
+            <li>New Reddit thread highlights: broken WebUI during prints; reports of thermal‑runaway risk on 1.1.25; excessive network traffic; community demand for source to enable community fixes and OpenNept4une‑like progress; confirmation that Klippy is transpiled to C++ and modified.</li>
+            <li>Examples cited: router blocking as workaround for telemetry; precedent that Creality released Klipper‑based sources for K1; acknowledgment that third‑party developers (e.g., Chitu) may be involved, which does not remove GPL obligations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-card" id="action">
+        <h2>📢 What You Can Do</h2>
+        <p>
+          If you own a Centauri Carbon, care about open-source rights, or want
+          to support legal compliance in the 3D printing industry, you can help
+          by politely but firmly requesting Elegoo release the source code.
+        </p>
+
+        <h3>Email Elegoo Support:</h3>
+        <p>
+          Use this template to contact Elegoo directly. The more people who
+          reach out, the more likely they are to take action:
+        </p>
+
+        <div class="email-template">
+Subject: Request for GPL Compliance – Centauri Carbon Firmware
+
+Dear Elegoo Support Team,
+
+I am writing regarding the Elegoo Centauri Carbon 3D printer and its firmware's GPL compliance obligations.
+
+BACKGROUND:
+It has been conclusively determined that the Centauri Carbon firmware is based on Klipper (commit 616 past v0.9.1, shorthash 28f60f7e), which is licensed under GPL-3.0. Community analysis has revealed:
+
+• Modified DSP MCU firmware with Klipper code paths
+• Custom bed MCU firmware with non-standard commands  
+• Transpiled Klippy host code (Python to C++) with original references intact
+• Version strings that confirm the exact Klipper commit used
+
+LEGAL REQUIREMENT:
+Under GPL-3.0, all modifications to licensed code must be made available to users. This is not a request—it is a legal obligation that applies regardless of business preferences or technical challenges.
+
+REQUEST:
+I respectfully but firmly request that Elegoo immediately release the complete modified source code for:
+
+1. DSP MCU firmware (Xtensa architecture modifications)
+2. Bed MCU firmware with custom commands
+3. Host-side Klippy code (C++ transpiled version)
+4. Any other GPL-licensed components used in the system
+
+PRECEDENT:
+Other manufacturers like Creality have successfully handled similar situations by releasing source code alongside binary blobs for proprietary components where necessary.
+
+I expect a concrete timeline for source code release, not generic "under review" responses. The 3D printing community is watching how Elegoo handles this legitimate compliance request.
+
+Thank you for your prompt attention to this legal matter.
+
+Sincerely,
+[Your Name]
+[Your Contact Information]
+        </div>
+
+        <h3>Other Ways to Help:</h3>
+        <ul>
+          <li>
+            <strong>Share this page</strong> with other Centauri Carbon owners
+          </li>
+          <li>
+            <strong>Join the discussion</strong> on Reddit, Discord, and 3D
+            printing forums
+          </li>
+          <li>
+            <strong>Support open-source alternatives</strong> like mainline
+            Klipper
+          </li>
+          <li>
+            <strong>Consider manufacturers</strong> who properly respect
+            open-source licenses when making future purchases
+          </li>
+          <li>
+            <strong>If refusal persists</strong>, document responses and evidence and consider contacting the Software Freedom Conservancy about GPL compliance. For consumer deception concerns, some users are also reporting to the FTC/state agencies.
+          </li>
+          <li>
+            <strong>Chargebacks (last resort)</strong>: Some banks may accept disputes for deceptive practices. Be aware this can affect future support or purchases.
+          </li>
+        </ul>
+      </div>
+
+      <div class="glass-card" id="outcomes">
+        <h2>🎯 Expected Outcomes</h2>
+        <p>
+          If Elegoo complies with the GPL license (as they legally must), users
+          will gain:
+        </p>
+        <ul>
+          <li>
+            <strong>Security updates:</strong> Community can patch
+            vulnerabilities
+          </li>
+          <li>
+            <strong>Feature improvements:</strong> Open development enables
+            innovation
+          </li>
+          <li>
+            <strong>Hardware longevity:</strong> Continued support even after
+            EOL
+          </li>
+          <li>
+            <strong>Transparency:</strong> Users know exactly what's running on
+            their devices
+          </li>
+          <li>
+            <strong>Learning opportunities:</strong> Study and understand the
+            firmware
+          </li>
+        </ul>
+
+        <div class="warning">
+          <strong>Consequences of Non-Compliance:</strong> GPL violations are
+          legally enforceable. The community has both the right and standing to
+          pursue legal action if necessary, though everyone hopes Elegoo will
+          simply do the right thing voluntarily.
+        </div>
+      </div>
+    </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        This PSA was created by the 3D printing community to raise awareness
+        about GPL compliance. Learn more about Klipper at
+        <a href="https://www.klipper3d.org/" style="color: #fff"
+          >klipper3d.org</a
+        >.
+      </p>
+      <p class="footer-note">
+        Last updated: August 27, 2025 | Issue ongoing since August 7, 2025
+      </p>
+      <p class="footer-subnote">
+        Thank you to all community contributors who made this effort possible 💜
+      </p>
+      <div class="info footer-info">
+        <strong>Note:</strong> A related but separate network traffic issue was discovered where the Centauri Carbon generates excessive data usage (70GB+ per month while idle). This has been moved to a separate discussion thread to keep the GPL compliance issue focused.
+      </div>
+    </footer>
+
+
+  </body>
+</html>
