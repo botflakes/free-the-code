@@ -241,7 +241,7 @@ initializeTheme();
   // === Get GitHub commit timestamp ===
   async function getLastCommitDate() {
     try {
-      const res = await fetch("https://api.github.com/repos/botflakes/free-the-code/commits/beta-fixes");
+      const res = await fetch("https://api.github.com/repos/Delulu-Delilah/free-the-code/commits/beta-fixes");
       const data = await res.json();
       return new Date(data.commit.author.date);
     } catch (err) {
