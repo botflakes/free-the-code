@@ -128,6 +128,54 @@
       el.dataset.scaled = '0';
     });
   });
+
+  // ---------- Contributors carousel controls ----------
+  qsa('.contributor-category').forEach((cat) => {
+    const container = cat.querySelector('.carousel-container');
+    if (!container) return;
+    const prev = cat.querySelector('.carousel-prev-btn');
+    const next = cat.querySelector('.carousel-next-btn');
+    const getStep = () => {
+      const first = container.querySelector('li');
+      return first ? Math.max(first.clientWidth, 240) + 12 : 260;
+    };
+    if (prev) prev.addEventListener('click', () => container.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+    if (next) next.addEventListener('click', () => container.scrollBy({ left: getStep(), behavior: 'smooth' }));
+
+    // Auto-scroll every few seconds (respect reduced motion, pause on hover/focus)
+    let autoTimer = null;
+    const autoIntervalMs = 6000;
+    function stepForward() {
+      const atEnd = container.scrollLeft + container.clientWidth >= (container.scrollWidth - 4);
+      if (atEnd) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: getStep(), behavior: 'smooth' });
+      }
+    }
+    function startAuto() {
+      if (autoTimer || prefersReduced) return;
+      autoTimer = setInterval(stepForward, autoIntervalMs);
+    }
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+    // Pause on user interaction
+    container.addEventListener('mouseenter', stopAuto);
+    container.addEventListener('mouseleave', startAuto);
+    container.addEventListener('focusin', stopAuto);
+    container.addEventListener('focusout', startAuto);
+    if (prev) prev.addEventListener('click', () => { stopAuto(); setTimeout(startAuto, autoIntervalMs); });
+    if (next) next.addEventListener('click', () => { stopAuto(); setTimeout(startAuto, autoIntervalMs); });
+
+    // Start if allowed
+    startAuto();
+  });
+
+  // (Using existing .last-update logic for consistent footer-style updates)
 })();
 
 // Add keyboard navigation support
