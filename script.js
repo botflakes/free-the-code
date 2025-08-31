@@ -128,6 +128,54 @@
       el.dataset.scaled = '0';
     });
   });
+
+  // ---------- Contributors carousel controls ----------
+  qsa('.contributor-category').forEach((cat) => {
+    const container = cat.querySelector('.carousel-container');
+    if (!container) return;
+    const prev = cat.querySelector('.carousel-prev-btn');
+    const next = cat.querySelector('.carousel-next-btn');
+    const getStep = () => {
+      const first = container.querySelector('li');
+      return first ? Math.max(first.clientWidth, 240) + 12 : 260;
+    };
+    if (prev) prev.addEventListener('click', () => container.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+    if (next) next.addEventListener('click', () => container.scrollBy({ left: getStep(), behavior: 'smooth' }));
+
+    // Auto-scroll every few seconds (respect reduced motion, pause on hover/focus)
+    let autoTimer = null;
+    const autoIntervalMs = 6000;
+    function stepForward() {
+      const atEnd = container.scrollLeft + container.clientWidth >= (container.scrollWidth - 4);
+      if (atEnd) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: getStep(), behavior: 'smooth' });
+      }
+    }
+    function startAuto() {
+      if (autoTimer || prefersReduced) return;
+      autoTimer = setInterval(stepForward, autoIntervalMs);
+    }
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+    // Pause on user interaction
+    container.addEventListener('mouseenter', stopAuto);
+    container.addEventListener('mouseleave', startAuto);
+    container.addEventListener('focusin', stopAuto);
+    container.addEventListener('focusout', startAuto);
+    if (prev) prev.addEventListener('click', () => { stopAuto(); setTimeout(startAuto, autoIntervalMs); });
+    if (next) next.addEventListener('click', () => { stopAuto(); setTimeout(startAuto, autoIntervalMs); });
+
+    // Start if allowed
+    startAuto();
+  });
+
+  // (Using existing .last-update logic for consistent footer-style updates)
 })();
 
 // Add keyboard navigation support
@@ -187,33 +235,50 @@ initializeTheme();
   }
 
   const issueRaisedDate = 'August 7, 2025';
-
-  // Get the actual last modified timestamp of this HTML file
-  const lastModified = new Date(document.lastModified);
-  const lastModifiedDate = formatDate(lastModified);
-  const lastModifiedDateTime = formatDateTime(lastModified);
-
   const timelineEl = document.querySelector('.timeline');
   const footerEls = document.querySelectorAll('.last-update');
 
-  if (!timelineEl) return;
-
-  const isResolved = timelineEl.dataset.resolved === "true";
-  const resolvedDateAttr = timelineEl.dataset.resolvedDate;
-
-  if (isResolved && resolvedDateAttr) {
-    const resolvedDate = formatDate(new Date(resolvedDateAttr));
-    const resolvedDateTime = formatDateTime(new Date(resolvedDateAttr));
-    timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Resolved on ${resolvedDate}`;
-    footerEls.forEach(p => {
-      p.textContent = `Page last updated: ${resolvedDateTime} | Issue resolved`;
-    });
-  } else {
-    timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Still ongoing as of ${lastModifiedDate}`;
-    footerEls.forEach(p => {
-      p.textContent = `Page last updated: ${lastModifiedDateTime} | Issue ongoing since ${issueRaisedDate}`;
-    });
+  // === Get GitHub commit timestamp ===
+  async function getLastCommitDate() {
+    try {
+      const res = await fetch("https://api.github.com/repos/Delulu-Delilah/free-the-code/commits/beta-fixes");
+      const data = await res.json();
+      return new Date(data.commit.author.date);
+    } catch (err) {
+      console.error("Failed to fetch GitHub last commit:", err);
+      return new Date(document.lastModified); // fallback
+    }
   }
+
+  async function updateUI() {
+    const lastCommit = await getLastCommitDate();
+    const commitDateTime = formatDateTime(lastCommit);
+
+    // Visitor system time (for timeline ongoing state)
+    const now = new Date();
+    const visitorDate = formatDate(now);
+
+    if (!timelineEl) return;
+
+    const isResolved = timelineEl.dataset.resolved === "true";
+    const resolvedDateAttr = timelineEl.dataset.resolvedDate;
+
+    if (isResolved && resolvedDateAttr) {
+      const resolvedDate = formatDate(new Date(resolvedDateAttr));
+      const resolvedDateTime = formatDateTime(new Date(resolvedDateAttr));
+      timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Resolved on ${resolvedDate}`;
+      footerEls.forEach(p => {
+        p.textContent = `Last updated: ${resolvedDateTime}`;
+      });
+    } else {
+      timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Still ongoing as of ${visitorDate}`;
+      footerEls.forEach(p => {
+        p.textContent = `Last updated: ${commitDateTime}`;
+      });
+    }
+  }
+
+  updateUI();
 })();
 
 // Performance optimization: Debounce scroll events

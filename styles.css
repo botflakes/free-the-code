@@ -760,6 +760,49 @@ code {
   margin: 2rem 0;
 }
 
+/* Carousel styles for contributors */
+.carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.carousel-controls { display: flex; gap: 0.5rem; }
+.carousel-prev-btn, .carousel-next-btn {
+  appearance: none;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.carousel-prev-btn:hover, .carousel-next-btn:hover { background: rgba(255,255,255,0.16); transform: translateY(-1px); }
+.carousel-prev-btn:active, .carousel-next-btn:active { transform: translateY(0); }
+
+.carousel-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 1fr);
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+.carousel-container > li { scroll-snap-align: start; min-width: 260px; }
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
 /* Contributors Carousel */
 /* Remove horizontal carousel wrapper; back to grid */
 .contributors-carousel { display: contents; }
