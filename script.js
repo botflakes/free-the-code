@@ -235,33 +235,50 @@ initializeTheme();
   }
 
   const issueRaisedDate = 'August 7, 2025';
-
-  // Get the actual last modified timestamp of this HTML file
-  const lastModified = new Date(document.lastModified);
-  const lastModifiedDate = formatDate(lastModified);
-  const lastModifiedDateTime = formatDateTime(lastModified);
-
   const timelineEl = document.querySelector('.timeline');
   const footerEls = document.querySelectorAll('.last-update');
 
-  if (!timelineEl) return;
-
-  const isResolved = timelineEl.dataset.resolved === "true";
-  const resolvedDateAttr = timelineEl.dataset.resolvedDate;
-
-  if (isResolved && resolvedDateAttr) {
-    const resolvedDate = formatDate(new Date(resolvedDateAttr));
-    const resolvedDateTime = formatDateTime(new Date(resolvedDateAttr));
-    timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Resolved on ${resolvedDate}`;
-    footerEls.forEach(p => {
-      p.textContent = `Page last updated: ${resolvedDateTime} | Issue resolved`;
-    });
-  } else {
-    timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Still ongoing as of ${lastModifiedDate}`;
-    footerEls.forEach(p => {
-      p.textContent = `Page last updated: ${lastModifiedDateTime} | Issue ongoing since ${issueRaisedDate}`;
-    });
+  // === Get GitHub commit timestamp ===
+  async function getLastCommitDate() {
+    try {
+      const res = await fetch("https://api.github.com/repos/botflakes/free-the-code/commits/beta-fixes");
+      const data = await res.json();
+      return new Date(data.commit.author.date);
+    } catch (err) {
+      console.error("Failed to fetch GitHub last commit:", err);
+      return new Date(document.lastModified); // fallback
+    }
   }
+
+  async function updateUI() {
+    const lastCommit = await getLastCommitDate();
+    const commitDateTime = formatDateTime(lastCommit);
+
+    // Visitor system time (for timeline ongoing state)
+    const now = new Date();
+    const visitorDate = formatDate(now);
+
+    if (!timelineEl) return;
+
+    const isResolved = timelineEl.dataset.resolved === "true";
+    const resolvedDateAttr = timelineEl.dataset.resolvedDate;
+
+    if (isResolved && resolvedDateAttr) {
+      const resolvedDate = formatDate(new Date(resolvedDateAttr));
+      const resolvedDateTime = formatDateTime(new Date(resolvedDateAttr));
+      timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Resolved on ${resolvedDate}`;
+      footerEls.forEach(p => {
+        p.textContent = `Last updated: ${resolvedDateTime}`;
+      });
+    } else {
+      timelineEl.textContent = `🗓️ Issue raised: ${issueRaisedDate} | Still ongoing as of ${visitorDate}`;
+      footerEls.forEach(p => {
+        p.textContent = `Last updated: ${commitDateTime}`;
+      });
+    }
+  }
+
+  updateUI();
 })();
 
 // Performance optimization: Debounce scroll events
