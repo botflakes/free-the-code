@@ -8,8 +8,8 @@
     />
     <title>PSA: Elegoo Centauri Carbon & GPL Compliance</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles-lite.css" media="(max-width: 640px) or (prefers-reduced-motion: reduce)" id="liteStylesheet">
     <link rel="stylesheet" href="styles-mobile.css" media="only screen and (max-width: 480px)">
+    <link rel="stylesheet" href="styles-lite.css" media="(max-width: 640px), (prefers-reduced-motion: reduce)" id="liteStylesheet">
     <link rel="icon" type="image/png" href="assets/icons/elegoo-logo.png">
     <link rel="canonical" href="https://freethecode.lol/">
     <meta name="description" content="A community effort aggregating evidence, context, and actions to ensure GPL compliance for the Elegoo Centauri Carbon firmware.">
@@ -196,7 +196,7 @@
             GPL on multiple libraries including Klipper
           </li>
           <li>
-            <strong>Chitu-supplied platforms:</strong> Shared firmware stacks used across brands (e.g., Anycubic; some Creality models historically) have, in some cases, resulted in distributions missing corresponding source for modified GPL components (<a href="https://en.wikipedia.org/wiki/Creality" target="_blank" rel="noopener noreferrer">source</a>). Supplier contracts do not remove the distributor’s GPL obligations (<a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener noreferrer">GPL‑3.0</a>). Chitu Systems' firmware and hardware are proprietary, which can constrain user modification and repairability (<a href="https://3dprintingindustry.com/news/chitu-systems-and-chitubox-a-lesson-in-fighting-open-source-3d-printing-194783/" target="_blank" rel="noopener noreferrer">context</a>).
+            <strong>Chitu-supplied platforms:</strong> Shared firmware stacks used across brands (e.g., Anycubic; some Creality models historically) have, in some cases, resulted in distributions missing the corresponding source for modified GPL components. Supplier contracts do not remove the distributor’s GPL obligations (<a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener noreferrer">GPL‑3.0</a>). Chitu Systems' firmware and hardware are proprietary, which can constrain user modification and repairability (<a href="https://3dprintingindustry.com/news/chitu-systems-and-chitubox-a-lesson-in-fighting-open-source-3d-printing-194783/" target="_blank" rel="noopener noreferrer">context</a>).
           </li>
           <li>
             <strong>Historical cases:</strong> Community reports cite GPL gaps on specific models (e.g., Creality CR‑X), while other products later published sources (e.g., Creality K1 series).
@@ -213,7 +213,7 @@
         </div>
 
         <div class="info">
-          <strong>Vendor statement:</strong> Elegoo has publicly stated that the Centauri Carbon OS is not based on Klipper (<a href="https://www.hackster.io/news/elegoo-centauri-carbon-3d-printer-review-c57caab085e1" target="_blank" rel="noopener noreferrer">source</a>). This page aggregates community technical indicators of Klipper‑based components and modifications. If confirmed, GPL‑3.0 requires providing the complete corresponding source to users of the distributed binaries (<a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener noreferrer">GPL‑3.0</a>).
+          <strong>Vendor statement:</strong> “No, the ELEGOO OS is not based on Klipper. The Klipper solution uses a dual-chip setup, consisting of an SOC + MCU, whereas the Centauri Carbon’s hardware architecture uses only one chip. Currently, it is not compatible with open-source Klipper commands or some open-source plugins, such as Fluidd.” (Hackster, Feb 17 2025) (<a href="https://www.hackster.io/news/elegoo-centauri-carbon-3d-printer-review-c57caab085e1" target="_blank" rel="noopener noreferrer">source</a>). This page aggregates community technical indicators of Klipper‑based components and modifications. If confirmed, GPL‑3.0 requires providing the complete corresponding source to users of the distributed binaries (<a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener noreferrer">GPL‑3.0</a>).
         </div>
       </div>
 
@@ -228,7 +228,7 @@
           <li><strong>Fraud and consumer protection:</strong> Misrepresentations (e.g., denying Klipper use) may create consumer fraud exposure; some users consider FTC/state reports.</li>
           <li><strong>Chargebacks (use cautiously):</strong> Some banks may accept disputes for deceptive practices. Risk: loss of support or future purchases.</li>
           <li><strong>International enforcement:</strong> GPL has seen international enforcement, including in China. For imported hardware, U.S. courts can issue border injunctions.</li>
-          <li><strong>Chitu involvement:</strong> Analysis suggests Chitu involvement with similarities to Anycubic Kobra 2 Pro (<a href="https://www.reddit.com/r/3Dprinting/comments/1n1rlmc/klipper_on_the_centauri_carbon_i_need_your_help/" target="_blank" rel="noopener noreferrer">community analysis</a>, <a href="https://github.com/OpenCentauri/OpenCentauri/tree/main/serial-multiplexer" target="_blank" rel="noopener noreferrer">repo</a>); some Creality models historically used Chitu platforms (<a href="https://en.wikipedia.org/wiki/Creality" target="_blank" rel="noopener noreferrer">source</a>). This informs where to direct compliance requests.</li>
+          <li><strong>Chitu involvement:</strong> Community‑reported analysis suggests Chitu involvement with similarities to Anycubic Kobra 2 Pro (<a href="https://www.reddit.com/r/3Dprinting/comments/1n1rlmc/klipper_on_the_centauri_carbon_i_need_your_help/" target="_blank" rel="noopener noreferrer">community analysis</a>, <a href="https://github.com/OpenCentauri/OpenCentauri/tree/main/serial-multiplexer" target="_blank" rel="noopener noreferrer">repo</a>). Where possible, prefer primary evidence (firmware strings/diffs, vendor docs). This informs where to direct compliance requests.</li>
         </ul>
         <p style="opacity:.8">These points reflect community discussion and are not legal advice.</p>
       </div>
@@ -482,7 +482,7 @@ ELEGOO Support Team
           <li>Community notes potential fraud concerns from past denials; some consider FTC/state reports.</li>
           <li>Some users weighing chargebacks; caution: this can impact future support/purchases.</li>
           <li>Discussion on international enforcement and possible border injunctions for non‑compliant imports.</li>
-          <li>Chitu involvement likely; similarities to Anycubic Kobra 2 Pro firmware observed (<a href="https://www.reddit.com/r/3Dprinting/comments/1n1rlmc/klipper_on_the_centauri_carbon_i_need_your_help/" target="_blank" rel="noopener noreferrer">community analysis</a>); note: some Creality models historically used Chitu‑supplied platforms (<a href="https://en.wikipedia.org/wiki/Creality" target="_blank" rel="noopener noreferrer">source</a>).</li>
+          <li>Chitu involvement likely; similarities to Anycubic Kobra 2 Pro firmware observed (<a href="https://www.reddit.com/r/3Dprinting/comments/1n1rlmc/klipper_on_the_centauri_carbon_i_need_your_help/" target="_blank" rel="noopener noreferrer">community analysis</a>). Prefer primary evidence and add dates where possible.</li>
           <li>Links added: Reddit context, Hackster review, OctoEverywhere mention, Rossmann wiki suggestion.</li>
           <li>Workarounds: Raspberry Pi host possible via <a href="https://github.com/OpenCentauri/OpenCentauri/tree/main/serial-multiplexer" target="_blank" rel="noopener noreferrer">serial‑multiplexer</a>, MCU side remains challenging.</li>
           <li>New Reddit thread highlights: broken WebUI during prints; reports of thermal‑runaway risk on 1.1.25; excessive network traffic; community demand for source to enable community fixes and OpenNept4une‑like progress; confirmation that Klippy is transpiled to C++ and modified.</li>
@@ -622,7 +622,7 @@ Sincerely,
         Thank you to all community contributors who made this effort possible 💜
       </p>
       <p class="footer-subnote">
-        <button id="lite-toggle" type="button" aria-pressed="false">Enable Lite Mode</button>
+        <button id="lite-toggle" type="button" aria-pressed="false" aria-controls="liteStylesheet">Enable Lite Mode</button>
       </p>
       <div class="info footer-info" id="traffic-note">
         <strong>Note:</strong> A related but separate network traffic issue was discovered where the Centauri Carbon generates excessive data usage (70GB+ per month while idle). This has been moved to a <a href="https://redd.it/1mbhnmn" target="_blank" rel="noopener noreferrer">separate discussion thread</a> to keep the GPL compliance issue focused.

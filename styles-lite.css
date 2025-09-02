@@ -33,7 +33,6 @@ img { filter: none !important; }
 .nav-menu { position: sticky !important; top: 0; z-index: 1000; }
 .nav-links { transition: none !important; }
 .nav-toggle { min-width: 44px; min-height: 44px; background: rgba(255,255,255,0.14); border-radius: 12px; }
-.nav-toggle::after { content: 'Menu'; margin-left: 0.25rem; color: #fff; font-size: 0.95rem; }
 .nav-brand { transform: none !important; }
 
 /* Particles disabled by CSS fallback */

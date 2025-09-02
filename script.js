@@ -6,9 +6,12 @@
   const setStyles = (el, styles) => { for (const k in styles) el.style[k] = styles[k]; };
   const storage = window.localStorage;
   const LITE_KEY = 'lite-mode-enabled';
-  function isLiteEnabled() { return storage.getItem(LITE_KEY) === '1'; }
+  function isLiteEnabled() {
+    try { return storage.getItem(LITE_KEY) === '1'; }
+    catch { return document.documentElement.getAttribute('data-lite') === '1'; }
+  }
   function setLiteEnabled(v) {
-    if (v) storage.setItem(LITE_KEY, '1'); else storage.removeItem(LITE_KEY);
+    try { if (v) storage.setItem(LITE_KEY, '1'); else storage.removeItem(LITE_KEY); } catch {}
     document.documentElement.setAttribute('data-lite', v ? '1' : '0');
     const btn = qs('#lite-toggle');
     if (btn) {
@@ -16,7 +19,8 @@
       btn.textContent = v ? 'Disable Lite Mode' : 'Enable Lite Mode';
     }
     const liteLink = qs('#liteStylesheet');
-    if (liteLink) liteLink.media = v ? 'all' : '(max-width: 640px) or (prefers-reduced-motion: reduce)';
+    // Enable when on; otherwise disable to defer to base+mobile CSS
+    if (liteLink) liteLink.media = v ? 'all' : 'not all';
   }
 
   // ---------- Mobile navigation ----------
@@ -196,13 +200,18 @@
   // ---------- Lite mode bootstrap ----------
   window.addEventListener('load', () => {
     const autoLite = (window.innerWidth < 480) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2);
-    if (autoLite && storage.getItem(LITE_KEY) === null) {
+    let hasPref = false;
+    try { hasPref = storage.getItem(LITE_KEY) !== null; } catch {}
+    if (autoLite && !hasPref) {
       setLiteEnabled(true);
     } else {
       setLiteEnabled(isLiteEnabled());
     }
     const btn = qs('#lite-toggle');
-    if (btn) btn.addEventListener('click', () => setLiteEnabled(!isLiteEnabled()));
+    if (btn) {
+      btn.setAttribute('aria-pressed', isLiteEnabled() ? 'true' : 'false');
+      btn.addEventListener('click', () => setLiteEnabled(!isLiteEnabled()));
+    }
   });
 })();
 

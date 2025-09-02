@@ -26,7 +26,6 @@ h2 { font-size: 1.5rem; }
 .nav-toggle span { width: 22px; }
 /* Increase tap target and add label contrast */
 .nav-toggle { min-width: 48px; min-height: 48px; background: rgba(255,255,255,0.12); }
-.nav-toggle::after { content: 'Menu'; margin-left: 0.25rem; color: #fff; font-size: 0.95rem; }
 /* Keep top bar sticky on phones */
 .nav-menu { position: sticky; top: 0; z-index: 1000; }
 
