@@ -326,11 +326,9 @@
               </div>
             </div>
             <ul class="contributor-list carousel-container scrollbar-hide">
-              <li><strong>Sims (HACC)</strong> - Original researcher who identified the GPL violation, performed binary analysis, and provided detailed technical evidence</li>
-              <li><strong>Rabir (HACC)</strong> - Verified that mainline Klipper can connect to the bed board, confirming version details</li>
-              <li><strong>Kvviingu</strong> - Performed network traffic analysis showing excessive data usage</li>
-              <li><strong>LA3QMA-KGB</strong> - Conducted tcpdump analysis to understand network behavior</li>
-              <li><strong>erica</strong> - Provided technical insights on network traffic and security implications</li>
+              <li><strong>Sims</strong> - Initiated the request for Elegoo to release their modified Klipper source code, providing detailed technical proof from the firmware binaries showing modifications to the MCU, bed MCU, and the transpilation of Klipper's Python host code to C++. Discovered evidence the firmware was based on Anycubic's and found articles where Elegoo explicitly denied using Klipper.</li>
+              <li><strong>Rabir</strong> - Verified that mainline Klipper could connect to the printer's bed board, confirming the specific version and commit Elegoo was using.</li>
+              <li><strong>motorhead1991</strong> - Pointed out usage of other open-source projects like the Linux kernel and Entware, implying further license obligations.</li>
             </ul>
           </div>
 
@@ -343,11 +341,13 @@
               </div>
             </div>
             <ul class="contributor-list carousel-container scrollbar-hide">
-              <li><strong>Mikufan39s</strong> - Emailed Elegoo multiple times, shared responses, persistent follow-up</li>
-              <li><strong>Anna | DevMiner (HACC)</strong> - Daily pings to Elegoo staff, strong GPL advocacy, community coordination</li>
-              <li><strong>EXEN</strong> - Emailed Elegoo, tagged support staff, actively supported the cause</li>
-              <li><strong>Marcel | CC (HACC)</strong> - Emailed Elegoo and shared identical response patterns</li>
-              <li><strong>beiyr (HACC)</strong> - Daily pings to Elegoo staff, consistent support</li>
+              <li><strong>bloky246</strong> - Emailed Elegoo directly about the open-source request multiple times and shared the canned responses with the group to keep others informed of the official (non)progress.</li>
+              <li><strong>Anna | DevMiner</strong> - Consistently pushed for the source code release, created a separate channel to move the off-topic network traffic discussion, and regularly pinged Elegoo staff for updates. Also sent emails to support.</li>
+              <li><strong>beiyr</strong> - Actively pinged Elegoo staff for updates, contacted the creator of Klipper to inform them of the situation, and attempted to contact the firmware developers (Chitu) directly.</li>
+              <li><strong>EXEN</strong> - Voiced support, actively pinged Elegoo staff for updates, and created a Reddit post to raise broader awareness of the issue.</li>
+              <li><strong>lilybwees</strong> - Articulated the community's position clearly, arguing that Elegoo had a legal and ethical obligation to release the code, especially since they had lied to reviewers. Defended the community's persistence when moderators intervened.</li>
+              <li><strong>brando753</strong> - Provided a detailed explanation of GPLv3 license compliance, refuting the idea that binary blobs or "cleaning up the code" were acceptable. Argued that Elegoo's actions constituted fraud and suggested contacting the SFC and the FTC.</li>
+              <li><strong>ViciousNarwhalFL</strong> - Suggested adding the issue as an article on Louis Rossmann's consumer rights wiki to increase public pressure.</li>
             </ul>
           </div>
 
@@ -360,19 +360,14 @@
               </div>
             </div>
             <ul class="contributor-list carousel-container scrollbar-hide">
-              <li><strong>Lamarc | N4 | CC (HACC)</strong> - Full support, noted industry compliance issues</li>
-              <li><strong>leiden6665</strong> - Early recognition of GPL requirements, mentioned the issue before</li>
-              <li><strong>Fabrizio | N4</strong> - Clear support for source code release</li>
-              <li><strong>coffeecup</strong> - Supported open source compliance</li>
-              <li><strong>Delulu Delilah</strong> - 100% support for the request</li>
-              <li><strong>zuturiddu</strong> - Full support for license adherence</li>
-              <li><strong>nate™ (DVNO)</strong> - Co-signed the request</li>
-              <li><strong>bloky246</strong> - Sent multiple emails to Elegoo requesting source code</li>
-              <li><strong>Connor</strong> - Turned off printer WiFi due to security concerns</li>
-              <li><strong>EXEN</strong> - Tagged Elegoo support staff and advocated actively</li>
-              <li><strong>beiyr (HACC)</strong> - Daily pings to Elegoo staff, consistent support</li>
-              <li><strong>Mikufan39s</strong> - Emailed Elegoo multiple times, shared responses</li>
-              <li><strong>Marcel | CC (HACC)</strong> - Emailed Elegoo and shared identical response patterns</li>
+              <li><strong>Lamarc</strong> - Voiced early and consistent support for the request, emphasizing that all parties, including Elegoo, must adhere to licensing rules.</li>
+              <li><strong>Delulu Delilah</strong> - Expressed 100% support for the open-source request.</li>
+              <li><strong>zuturiddu</strong> - Supported the request, framing it as a simple matter of adhering to open-source license terms.</li>
+              <li><strong>leiden6665</strong> - Noted early on that derivatives of Klipper must be open source due to the license and expressed surprise it took so long for the issue to be formally raised.</li>
+              <li><strong>coffeecup</strong> - Added their voice to the call for Elegoo to provide the source code.</li>
+              <li><strong>Fabrizio</strong> - Supported the movement and demanded the source code.</li>
+              <li><strong>nate™</strong> - Co-signed the request.</li>
+              <li><strong>harrym</strong> - Expressed that the printer would be even better with access to the open-source Klipper software.</li>
             </ul>
           </div>
 
@@ -385,12 +380,10 @@
               </div>
             </div>
             <ul class="contributor-list carousel-container scrollbar-hide">
-              <li><strong>crazyantihacker</strong> - Investigated excessive 70GB+ monthly traffic while idle</li>
-              <li><strong>Kvviingu</strong> - Confirmed 29.5% of household traffic from idle printer, Apple server connections</li>
-              <li><strong>Anna | DevMiner (HACC)</strong> - Reported 100GB+ traffic from mainboard in one month</li>
-              <li><strong>LA3QMA-KGB</strong> - Conducted tcpdump analysis of network behavior</li>
-              <li><strong>erica</strong> - Provided technical insights on traffic patterns and security implications</li>
-              <li><strong>baconmilkshake (AHI)</strong> - Explained development shortcuts leading to excessive network requests</li>
+              <li><strong>crazyantihacker</strong> - First raised the issue of the printer's excessive network traffic, reporting that his device had uploaded over 70GB in a single month while idle and linked to a Reddit thread discussing it.</li>
+              <li><strong>Marcel</strong> - Provided screenshots from his network monitoring tool confirming the excessive data usage.</li>
+              <li><strong>LA3QMA-KGB</strong> - Used tcpdump to investigate the traffic, noting that the slicer software also generated significant traffic.</li>
+              <li><strong>Kvviingu</strong> - Analyzed his network traffic, confirming that the printer was responsible for a large percentage of activity even while idle and that it was mostly a high volume of health checks.</li>
             </ul>
           </div>
 
@@ -403,10 +396,11 @@
               </div>
             </div>
             <ul class="contributor-list carousel-container scrollbar-hide">
-              <li><strong>Corey Stup</strong> - Provided context about Anycubic's similar GPL violations</li>
-              <li><strong>Motorhead1991</strong> - Noted this has been mentioned before, highlighted other GPL violations (Linux kernel, Entware)</li>
-              <li><strong>legionasaurus (HACC)</strong> - Commented on legal expert aspects</li>
-              <li><strong>baconmilkshake (AHI)</strong> - Provided reasonable explanations and security concerns about outdated firmware</li>
+              <li><strong>Corey Stup</strong> - Pointed out that Anycubic engages in the same practice of violating GPL with their KobraOS, providing industry context.</li>
+              <li><strong>baconmilkshake</strong> - Argued that the situation was more likely due to a rushed development process rather than conspiracy, but highlighted the security risks of running outdated, closed-source software and the potential for creating a botnet.</li>
+              <li><strong>erica</strong> - Downplayed network traffic conspiracy theories but emphasized the seriousness of the legal and ethical violation of the Klipper license.</li>
+              <li><strong>Tyler</strong> - Suggested that Elegoo's staff might be unaware of the Klipper usage, with the firmware being handled by a third-party board manufacturer, and mentioned that US state departments of justice could be interested in the case due to deceptive advertising.</li>
+              <li><strong>Louis</strong> - Offered the perspective that Chinese companies have historically had less respect for open-source licenses and that marketing likely denied using Klipper because the implementation didn't meet user expectations for a full Klipper-based product.</li>
             </ul>
           </div>
         </div>
