@@ -225,18 +225,38 @@ body::before {
 
 .nav-toggle {
   display: none;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  box-shadow: var(--shadow-sm);
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .nav-toggle span {
-  width: 25px;
+  width: 26px;
   height: 3px;
   background: #fff;
   margin: 3px 0;
   transition: all 0.3s ease;
   border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+
+.nav-toggle:hover { background: rgba(255,255,255,0.16); transform: translateY(-1px); }
+.nav-toggle:active { transform: translateY(0); }
+.nav-toggle::after {
+  content: 'Menu';
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
 }
 
 /* Smooth Scrolling */

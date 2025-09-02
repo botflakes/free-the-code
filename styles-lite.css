@@ -1,0 +1,77 @@
+/* Lite stylesheet: minimal effects for slower devices */
+/* Strategy: reduce shadows, blur, animations, transitions, fixed backgrounds, and heavy layout effects. */
+
+:root {
+  --lite-transition: none !important;
+  --lite-shadow: none !important;
+  --lite-blur: 0 !important;
+}
+
+/* Disable global animations/transitions where possible */
+* {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* Ensure base elements remain visible without animations */
+body { opacity: 1 !important; }
+.glass-card { opacity: 1 !important; transform: none !important; }
+
+/* Containers */
+.glass-container, .glass-card, .nav-menu, .toc {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  background: rgba(20,20,20,0.9) !important;
+}
+
+/* Images */
+img { filter: none !important; }
+
+/* Navigation */
+.nav-menu { position: sticky !important; top: 0; z-index: 1000; }
+.nav-links { transition: none !important; }
+.nav-toggle { min-width: 44px; min-height: 44px; background: rgba(255,255,255,0.14); border-radius: 12px; }
+.nav-brand { transform: none !important; }
+
+/* Particles disabled by CSS fallback */
+.particle { display: none !important; }
+
+/* Carousels become simple scroll areas */
+.carousel-container {
+  scroll-behavior: auto !important;
+}
+
+/* Hover scaling disabled */
+.nav-link, .glass-card, .support-badge, .contributor-category {
+  transform: none !important;
+}
+
+/* Reduce padding/margins slightly */
+.glass-card { padding: 1rem !important; margin: 0.75rem 0 !important; }
+.hero-content { padding: 1rem !important; }
+
+/* Typography tweaks if needed */
+body { line-height: 1.4; }
+
+/* Utility: hide heavy decorative backgrounds if present */
+body::before, body::after { display: none !important; }
+
+/* Disable shine/sheen pseudo-elements and related animations */
+.glass-card::before,
+.glass-card::after,
+.highlight::before,
+.warning::before,
+.info::before,
+.gratitude::before,
+header::before,
+.nav-link::before,
+.email-template::before {
+  display: none !important;
+  animation: none !important;
+  transition: none !important;
+  content: none !important;
+}
+
+
