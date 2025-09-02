@@ -4,6 +4,20 @@
   const qs = (sel, root = document) => root.querySelector(sel);
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const setStyles = (el, styles) => { for (const k in styles) el.style[k] = styles[k]; };
+  const storage = window.localStorage;
+  const LITE_KEY = 'lite-mode-enabled';
+  function isLiteEnabled() { return storage.getItem(LITE_KEY) === '1'; }
+  function setLiteEnabled(v) {
+    if (v) storage.setItem(LITE_KEY, '1'); else storage.removeItem(LITE_KEY);
+    document.documentElement.setAttribute('data-lite', v ? '1' : '0');
+    const btn = qs('#lite-toggle');
+    if (btn) {
+      btn.setAttribute('aria-pressed', v ? 'true' : 'false');
+      btn.textContent = v ? 'Disable Lite Mode' : 'Enable Lite Mode';
+    }
+    const liteLink = qs('#liteStylesheet');
+    if (liteLink) liteLink.media = v ? 'all' : '(max-width: 640px) or (prefers-reduced-motion: reduce)';
+  }
 
   // ---------- Mobile navigation ----------
   const navToggle = qs('.nav-toggle');
@@ -49,7 +63,7 @@
   window.addEventListener('load', setActiveNav);
 
   // ---------- Scroll animations ----------
-  if ('IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window && !isLiteEnabled()) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -111,23 +125,25 @@
       document.body.appendChild(p);
     }
   }
-  if (!prefersReduced && window.innerWidth > 768) createParticleEffect();
+  if (!prefersReduced && window.innerWidth > 768 && !isLiteEnabled()) createParticleEffect();
 
   // ---------- Scroll progress bar ----------
  
 
   // ---------- Hover effects (idempotent) ----------
-  qsa('.nav-link, .glass-card, .support-badge, .contributor-category').forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      if (el.dataset.scaled === '1') return;
-      el.style.transform = (el.style.transform || '') + ' scale(1.02)';
-      el.dataset.scaled = '1';
+  if (!isLiteEnabled()) {
+    qsa('.nav-link, .glass-card, .support-badge, .contributor-category').forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        if (el.dataset.scaled === '1') return;
+        el.style.transform = (el.style.transform || '') + ' scale(1.02)';
+        el.dataset.scaled = '1';
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = (el.style.transform || '').replace(' scale(1.02)', '');
+        el.dataset.scaled = '0';
+      });
     });
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = (el.style.transform || '').replace(' scale(1.02)', '');
-      el.dataset.scaled = '0';
-    });
-  });
+  }
 
   // ---------- Contributors carousel controls ----------
   qsa('.contributor-category').forEach((cat) => {
@@ -176,6 +192,18 @@
   });
 
   // (Using existing .last-update logic for consistent footer-style updates)
+
+  // ---------- Lite mode bootstrap ----------
+  window.addEventListener('load', () => {
+    const autoLite = (window.innerWidth < 480) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2);
+    if (autoLite && storage.getItem(LITE_KEY) === null) {
+      setLiteEnabled(true);
+    } else {
+      setLiteEnabled(isLiteEnabled());
+    }
+    const btn = qs('#lite-toggle');
+    if (btn) btn.addEventListener('click', () => setLiteEnabled(!isLiteEnabled()));
+  });
 })();
 
 // Add keyboard navigation support

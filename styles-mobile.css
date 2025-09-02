@@ -1,0 +1,39 @@
+/* Mobile-specific styles (<=480px). Keep fast and minimal. */
+
+/* Typography and spacing */
+html { font-size: 15px; }
+body { line-height: 1.5; padding-top: 72px; }
+
+/* Layout simplifications */
+.layout { display: block; padding: 0 0.75rem; }
+.toc { position: static; margin: 0 0 1rem 0; padding: 1rem; }
+section { padding: 0; margin: 1rem auto; }
+
+/* Cards */
+.glass-card { padding: 1rem; margin: 0.75rem 0; border-radius: 12px; }
+.highlight, .warning, .info, .gratitude { padding: 1.25rem; margin: 1.25rem 0; }
+
+/* Header */
+header { margin: 1rem 0.5rem; padding: 1.5rem 1rem; }
+.hero-content { padding: 0; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+
+/* Navigation */
+.nav-container { padding: 0 0.75rem; }
+.nav-links { gap: 1rem; }
+.nav-link { padding: 0.5rem 0.75rem; }
+.nav-toggle span { width: 22px; }
+/* Increase tap target and add label contrast */
+.nav-toggle { min-width: 48px; min-height: 48px; background: rgba(255,255,255,0.12); }
+.nav-toggle::after { content: 'Menu'; margin-left: 0.25rem; color: #fff; font-size: 0.95rem; }
+/* Keep top bar sticky on phones */
+.nav-menu { position: sticky; top: 0; z-index: 1000; }
+
+/* Contributors & support grids */
+.community-support, .contributors-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+.support-badge, .contributor-category { padding: 1rem; }
+
+/* Footer */
+footer { padding: 2rem 1rem; }
+
