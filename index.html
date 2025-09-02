@@ -185,8 +185,8 @@
       <div class="glass-card" id="context">
         <h2><span class="emoji">🏢</span> Industry Context</h2>
         <p>
-          Unfortunately, Elegoo isn't alone in GPL violations. Several major 3D
-          printer manufacturers have similar issues:
+          Unfortunately, Elegoo isn't alone in problematic practices. Some vendors have
+          GPL compliance issues; others impose ecosystem restrictions (not GPL violations):
         </p>
         <ul>
           <li>
@@ -194,16 +194,13 @@
             GPL on multiple libraries including Klipper
           </li>
           <li>
-            <strong>Chitu-supplied platforms:</strong> Shared firmware stacks used across brands have led to shipments that include modified GPL components without corresponding source. Supplier contracts do not remove the distributor’s GPL obligations.
+            <strong>Chitu-supplied platforms:</strong> Shared firmware stacks used across brands (e.g., Anycubic; Creality on some models historically) have led to shipments that include modified GPL components without corresponding source. Supplier contracts do not remove the distributor’s GPL obligations.
           </li>
           <li>
             <strong>Historical cases:</strong> Community reports cite GPL gaps on specific models (e.g., Creality CR‑X), while other products later published sources (e.g., Creality K1 series).
           </li>
           <li>
             <strong>Marlin/Linux derivatives:</strong> Some vendors have shipped modified Marlin, Linux kernels, or Entware without timely source publication. GPL‑3.0 requires providing complete corresponding source to users of the binaries.
-          </li>
-          <li>
-            <strong>Bambu Lab (ecosystem restrictions):</strong> Recent firmware introduced an authorization control system that blocks custom firmware and restricts third‑party slicers from wireless transfers. "Bambu Connect" provides a limited bridge; community notes reduced direct access and accessory compatibility.
           </li>
         </ul>
 
@@ -225,20 +222,21 @@
           <li><strong>Fraud and consumer protection:</strong> Misrepresentations (e.g., denying Klipper use) may create consumer fraud exposure; some users consider FTC/state reports.</li>
           <li><strong>Chargebacks (use cautiously):</strong> Some banks may accept disputes for deceptive practices. Risk: loss of support or future purchases.</li>
           <li><strong>International enforcement:</strong> GPL has seen international enforcement, including in China. For imported hardware, U.S. courts can issue border injunctions.</li>
-          <li><strong>Chitu involvement:</strong> Code suggests Chitu involvement and similarities to Anycubic Kobra 2 Pro, impacting who should receive compliance requests.</li>
+          <li><strong>Chitu involvement:</strong> Code suggests Chitu involvement and similarities to Anycubic Kobra 2 Pro; some Creality models have historically used Chitu platforms. This impacts who should receive compliance requests.</li>
         </ul>
         <p style="opacity:.8">These points reflect community discussion and are not legal advice.</p>
       </div>
 
       <div class="glass-card" id="good-actors">
-        <h2><span class="emoji">✅</span> Good Actors (Open-Source Compliance)</h2>
-        <p>Examples of manufacturers/projects releasing sources and enabling community collaboration:</p>
+        <h2><span class="emoji">✅</span> Good Actors (Embracing Open-Source and Community)</h2>
+        <p>These companies often contribute to the broader 3D printing ecosystem, foster innovation, and empower users with flexibility and control.</p>
         <ul>
+          <li><strong>Prusa Research</strong> — Open‑source printers, firmware, and PrusaSlicer; strong community engagement and documentation.</li>
+          <li><strong>LulzBot (FAME 3D)</strong> — Historically 100% open‑source; robust printers that encourage user modification.</li>
           <li><strong>Creality</strong> — Released open-source Klipper firmware for K1 series and Ender 3 V3 KE.</li>
           <li><strong>Ultimaker</strong> — Long-standing open-source ethos; early printers released with open designs.</li>
           <li><strong>BCN3D</strong> — Published original design files for Sigma/Sigmax R19 to benefit the community.</li>
           <li><strong>Rat Rig</strong> — Open-source V‑Core series; open hardware approach encourages modification.</li>
-          <li><strong>Bambu Lab</strong> — Previously enabled open‑source elements on the X1 line (2023); recent authorization controls have tightened the ecosystem and limited third‑party wireless transfers.</li>
           <li><strong>Sovol</strong> — SV08 project sources published on GitHub.</li>
           <li><strong>Snapmaker</strong> — U1 runs Klipper; FAQ states commitment to publish sources (<a href="https://support.snapmaker.com/hc/en-us/articles/33344279396759-FAQ-for-Snapmaker-U1-3D-Printer" target="_blank" rel="noopener noreferrer">FAQ</a>).</li>
         </ul>
@@ -478,7 +476,7 @@ ELEGOO Support Team
           <li>Community notes potential fraud concerns from past denials; some consider FTC/state reports.</li>
           <li>Some users weighing chargebacks; caution: this can impact future support/purchases.</li>
           <li>Discussion on international enforcement and possible border injunctions for non‑compliant imports.</li>
-          <li>Chitu likely involved; similarities to Anycubic Kobra 2 Pro firmware observed.</li>
+          <li>Chitu likely involved; similarities to Anycubic Kobra 2 Pro firmware observed; note: some Creality models have historically used Chitu-supplied platforms.</li>
           <li>Links added: Reddit context, Hackster review, OctoEverywhere mention, Rossmann wiki suggestion.</li>
           <li>Workarounds: Raspberry Pi host possible via <a href="https://github.com/OpenCentauri/OpenCentauri/tree/main/serial-multiplexer" target="_blank" rel="noopener noreferrer">serial‑multiplexer</a>, MCU side remains challenging.</li>
           <li>New Reddit thread highlights: broken WebUI during prints; reports of thermal‑runaway risk on 1.1.25; excessive network traffic; community demand for source to enable community fixes and OpenNept4une‑like progress; confirmation that Klippy is transpiled to C++ and modified.</li>
