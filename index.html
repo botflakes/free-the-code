@@ -164,7 +164,7 @@
         <h4>Embedded Web Server (Mongoose 7.12)</h4>
         <ul>
           <li>Firmware exposes an HTTP service identifying as <code>Mongoose/7.12</code> (embedded web server).</li>
-          <li>Per vendor terms, Mongoose 7.x is commercial-only; distribution in firmware requires a paid license from Cesanta.</li>
+          <li>Mongoose 7.12 requires a commercial license to be able to distribute it without publishing code, which ELEGOO does not have.</li>
           <li>If no commercial license was obtained, this is a separate license violation in addition to any GPL obligations.</li>
         </ul>
         <p>
@@ -173,9 +173,6 @@
           <a href="https://mongoose.ws/licensing/" target="_blank" rel="noopener noreferrer">Licensing</a>,
           <span>Firmware evidence link pending</span>
         </p>
-        <div class="info">
-          <strong>Clarification:</strong> This refers to the Cesanta Mongoose embedded web server library (v7.x), which requires a commercial license for proprietary firmware. Do not confuse with <a href="https://mongoose-os.com/licensing.html" target="_blank" rel="noopener noreferrer">Mongoose OS</a>, a separate product whose Community Edition is Apache‑2.0.
-        </div>
 
         <h4>Network Traffic Investigation</h4>
         <p>
@@ -319,6 +316,9 @@
           <p>
             <strong>Connor:</strong> "I stopped having the printer from idling anymore and now I'm gonna just turn off the wifi,
             the Chinese have too much to gain from my american network until they can explain themselves"
+          </p>
+          <p>
+            <strong>brando753:</strong> "GPL compliance is simple: if you use GPL code, you must provide the modified source on request. If you cannot, you must not use GPL code. Providing binary blobs is not compliance. Next step: document refusals and contact SFC to support enforcement."
           </p>
         </blockquote>
       </div>
@@ -507,6 +507,7 @@ ELEGOO Support Team
           <li>New Reddit thread highlights: broken WebUI during prints; reports of thermal‑runaway risk on 1.1.25; excessive network traffic; community demand for source to enable community fixes and OpenNept4une‑like progress; confirmation that Klippy is transpiled to C++ and modified.</li>
           <li>Examples cited: router blocking as workaround for telemetry; precedent that Creality released Klipper‑based sources for K1; acknowledgment that third‑party developers (e.g., Chitu) may be involved, which does not remove GPL obligations.</li>
           <li>New: Evidence of embedded <code>Mongoose/7.12</code> web server in firmware; the Cesanta Mongoose library (v7.x) requires a paid commercial license for proprietary use. Add primary evidence links. Note: not Mongoose OS.</li>
+          <li>Aug 28, 2025: Community discussion emphasizes documenting refusals and contacting SFC; debate on binary blobs vs. GPL‑3.0 compliance; border‑enforcement remedies for imports noted.</li>
         </ul>
       </div>
 
