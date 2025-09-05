@@ -79,6 +79,8 @@
           · <a href="https://www.hackster.io/news/elegoo-centauri-carbon-3d-printer-review-c57caab085e1" target="_blank" rel="noopener noreferrer">Hackster review quote</a>
           · <a href="https://blog.octoeverywhere.com/the-best-iphone-and-android-apps-for-the-elegoo-centauri-carbon/" target="_blank" rel="noopener noreferrer">OctoEverywhere mention</a>
           · <a href="https://consumerrights.wiki/Article_suggestions" target="_blank" rel="noopener noreferrer">Rossmann Consumer Rights wiki</a>
+          · <a href="https://opencentauri.github.io/OpenCentauri/" target="_blank" rel="noopener noreferrer">OpenCentauri docs</a>
+          · <a href="https://discord.gg/sRVKm5KjCf" target="_blank" rel="noopener noreferrer">OpenCentauri Discord</a>
           · <a href="https://github.com/OpenCentauri/OpenCentauri/tree/main/serial-multiplexer" target="_blank" rel="noopener noreferrer">Serial multiplexer</a>
         </div>
       </div>
@@ -159,6 +161,22 @@
           <li>Includes components like <code>mem_interface_DSP</code></li>
         </ul>
 
+        <h4>Embedded Web Server (Mongoose 7.12)</h4>
+        <ul>
+          <li>Firmware exposes an HTTP service identifying as <code>Mongoose/7.12</code> (embedded web server).</li>
+          <li>Per vendor terms, Mongoose 7.x is commercial-only; distribution in firmware requires a paid license from Cesanta.</li>
+          <li>If no commercial license was obtained, this is a separate license violation in addition to any GPL obligations.</li>
+        </ul>
+        <p>
+          Sources:
+          <a href="https://mongoose.ws/" target="_blank" rel="noopener noreferrer">Cesanta Mongoose</a>,
+          <a href="https://mongoose.ws/licensing/" target="_blank" rel="noopener noreferrer">Licensing</a>,
+          <span>Firmware evidence link pending</span>
+        </p>
+        <div class="info">
+          <strong>Clarification:</strong> This refers to the Cesanta Mongoose embedded web server library (v7.x), which requires a commercial license for proprietary firmware. Do not confuse with <a href="https://mongoose-os.com/licensing.html" target="_blank" rel="noopener noreferrer">Mongoose OS</a>, a separate product whose Community Edition is Apache‑2.0.
+        </div>
+
         <h4>Network Traffic Investigation</h4>
         <p>
           Community members investigated excessive network usage:
@@ -229,6 +247,7 @@
           <li><strong>Chargebacks (use cautiously):</strong> Some banks may accept disputes for deceptive practices. Risk: loss of support or future purchases.</li>
           <li><strong>International enforcement:</strong> GPL has seen international enforcement, including in China. For imported hardware, U.S. courts can issue border injunctions.</li>
           <li><strong>Chitu involvement:</strong> Community‑reported analysis suggests Chitu involvement with similarities to Anycubic Kobra 2 Pro (<a href="https://www.reddit.com/r/3Dprinting/comments/1n1rlmc/klipper_on_the_centauri_carbon_i_need_your_help/" target="_blank" rel="noopener noreferrer">community analysis</a>, <a href="https://github.com/OpenCentauri/OpenCentauri/tree/main/serial-multiplexer" target="_blank" rel="noopener noreferrer">repo</a>). Where possible, prefer primary evidence (firmware strings/diffs, vendor docs). This informs where to direct compliance requests.</li>
+          <li><strong>Mongoose 7.x licensing:</strong> The Cesanta Mongoose embedded web server (v7.x) requires a commercial license for proprietary firmware; using it without one would be a separate license violation. Not to be confused with <a href="https://mongoose-os.com/licensing.html" target="_blank" rel="noopener noreferrer">Mongoose OS</a> (a different product with a Community Edition under Apache‑2.0). See <a href="https://mongoose.ws/licensing/" target="_blank" rel="noopener noreferrer">licensing</a>.</li>
         </ul>
         <p style="opacity:.8">These points reflect community discussion and are not legal advice.</p>
       </div>
@@ -487,6 +506,7 @@ ELEGOO Support Team
           <li>Workarounds: Raspberry Pi host possible via <a href="https://github.com/OpenCentauri/OpenCentauri/tree/main/serial-multiplexer" target="_blank" rel="noopener noreferrer">serial‑multiplexer</a>, MCU side remains challenging.</li>
           <li>New Reddit thread highlights: broken WebUI during prints; reports of thermal‑runaway risk on 1.1.25; excessive network traffic; community demand for source to enable community fixes and OpenNept4une‑like progress; confirmation that Klippy is transpiled to C++ and modified.</li>
           <li>Examples cited: router blocking as workaround for telemetry; precedent that Creality released Klipper‑based sources for K1; acknowledgment that third‑party developers (e.g., Chitu) may be involved, which does not remove GPL obligations.</li>
+          <li>New: Evidence of embedded <code>Mongoose/7.12</code> web server in firmware; the Cesanta Mongoose library (v7.x) requires a paid commercial license for proprietary use. Add primary evidence links. Note: not Mongoose OS.</li>
         </ul>
       </div>
 
@@ -551,6 +571,9 @@ Sincerely,
           <li>
             <strong>Join the discussion</strong> on Reddit, Discord, and 3D
             printing forums
+          </li>
+          <li>
+            <strong>OpenCentauri community</strong>: Read the <a href="https://opencentauri.github.io/OpenCentauri/" target="_blank" rel="noopener noreferrer">docs</a> and join the <a href="https://discord.gg/sRVKm5KjCf" target="_blank" rel="noopener noreferrer">Discord</a>
           </li>
           <li>
             <strong>Support open-source alternatives</strong> like mainline
